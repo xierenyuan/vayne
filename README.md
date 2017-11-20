@@ -1,2 +1,34 @@
 # vayne
 薇恩 基于 vue-cli 的 webpack 通用封装,  更易简单的开始你的项目
+
+## 使用
+
+```shell
+npm i vayne -g
+```
+
+## 使用须知
+> 因为node-sass 安装过慢 所以在当前项目移除依赖 需在使用项目根路径手动安装 见
+
+```shell
+SASS_BINARY_SITE=http://npm.taobao.org/mirrors/node-sass npm install node-sass -D
+```
+
+## server
+
+```shell
+# 指定端口号
+vayne server --prot=2000
+```
+
+
+## .vaynerc 配置
+
+## isNg 
+> 编译 angular.js 项目
+
+## include
+>  需要编译的文件 同loader 的 include
+
+## template
+> 模板入口 默认是 src/index.tpl

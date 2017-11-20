@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+'use strict'
+
+const program = require('commander')
+const checkVersion = require('../lib/check.version')
+
+checkVersion(() => {
+  program
+    .version(require('../package').version)
+    .usage('<command> [options]')
+    .command('server', '启动开发（调试）模式')
+    .command('build', '生产模式，生成最终的部署代码')
+    .parse(process.argv)
+
+})

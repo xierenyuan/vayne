@@ -1,0 +1,84 @@
+{
+  "name": "vayne",
+  "version": "0.0.1",
+  "description": "基于 vue-cli 的 webpack 通用封装, 更易简单的开始你的项目",
+  "main": "index.js",
+  "bin": {
+    "vayne": "bin/vayne",
+    "vayne-build": "bin/vayne-build",
+    "vayne-server": "bin/vayne-server"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xierenyuan/vayne.git"
+  },
+  "keywords": [
+    "webpack",
+    "vue-cli",
+    "vayne"
+  ],
+  "author": "xierenyuan@qq.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xierenyuan/vayne/issues"
+  },
+  "homepage": "https://github.com/xierenyuan/vayne#readme",
+  "dependencies": {
+    "autoprefixer": "^7.1.6",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.2",
+    "babel-loader": "^7.1.2",
+    "chalk": "^2.3.0",
+    "commander": "^2.11.0",
+    "connect-history-api-fallback": "^1.5.0",
+    "copy-webpack-plugin": "^4.2.1",
+    "cross-spawn": "^5.1.0",
+    "css-loader": "^0.28.7",
+    "eslint": "^4.11.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-html": "^4.0.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "express": "^4.16.2",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.5",
+    "friendly-errors-webpack-plugin": "^1.6.1",
+    "html-webpack-inline-source-plugin": "^0.0.9",
+    "html-webpack-plugin": "^2.30.1",
+    "http-proxy-middleware": "^0.17.4",
+    "opn": "^5.1.0",
+    "optimize-css-assets-webpack-plugin": "^3.2.0",
+    "ora": "^1.3.0",
+    "parse-json-pretty": "^0.1.0",
+    "portfinder": "^1.0.13",
+    "postcss-load-config": "^1.2.0",
+    "postcss-loader": "^2.0.8",
+    "postcss-px2rem": "^0.3.0",
+    "request": "^2.83.0",
+    "rimraf": "^2.6.2",
+    "sass-loader": "^6.0.6",
+    "semver": "^5.4.1",
+    "shelljs": "^0.7.8",
+    "strip-json-comments": "^2.0.1",
+    "url-loader": "^0.6.2",
+    "vue-loader": "^13.5.0",
+    "vue-style-loader": "^3.0.3",
+    "vue-template-compiler": "^2.5.6",
+    "webpack": "^3.8.1",
+    "webpack-bundle-analyzer": "^2.9.1",
+    "webpack-dev-middleware": "^1.12.0",
+    "webpack-hot-middleware": "^2.20.0",
+    "webpack-merge": "^4.1.1"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  }
+}

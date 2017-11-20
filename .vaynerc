@@ -1,0 +1,41 @@
+{
+  // 入口文件
+  "entry": "",
+  // 图片、字体等资源文件小于多少时（单位 Byte）内嵌在 JS 或 CSS 中，默认为 10000
+  "urlLoaderLimit": 10000,
+  "build": {
+    "env": {
+      "NODE_ENV": "'production'"
+    },
+    "index": "dist/index.html",
+    "assetsRoot": "dist",
+    "assetsSubDirectory": "static",
+    "assetsPublicPath": "/",
+    "productionSourceMap": false,
+    // Run the build command with an extra argument to
+    // View the bundle analyzer report after build finishes:
+    // Set to `true` or `false` to always turn it on or off
+    "bundleAnalyzerReport": false
+  },
+  "dev": {
+    "env": {
+      "NODE_ENV": "'development'"
+    },
+    "port": 8080,
+    "autoOpenBrowser": false,
+    "assetsSubDirectory": "static",
+    "assetsPublicPath": "/",
+    "proxyTable": {
+      "/api": {
+        "target": "http://10.171.22.45:8887/",
+        "changeOrigin": true
+      }
+    },
+    // CSS Sourcemaps off by default because relative paths are "buggy"
+    // with this option, according to the CSS-Loader README
+    // (https://github.com/webpack/css-loader#sourcemaps)
+    // In our experience, they generally work as expected,
+    // just be aware of this issue when enabling this option.
+    "cssSourceMap": false
+  }
+}
