@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 const {join} = require('path')
 const {fork} = require('child_process')
 
@@ -20,4 +21,6 @@ function start () {
   })
 }
 
-start()
+require('../lib/check.version')(() => {
+  start()
+})
