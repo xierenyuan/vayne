@@ -1,5 +1,8 @@
-# vayne
-薇恩 基于 vue-cli 的 webpack 通用封装,  更易简单的开始你的项目
+<p align="center"><a href="https://github.com/xierenyuan/vayne/" target="_blank"><img src="./lib/config/vn.png"></a></p>
+<h3 align="center">vayne</h3>
+<p align="center">
+  薇恩 基于 vue-cli 的 webpack 通用封装,  更易简单的开始你的项目
+</p>
 
 ## 使用
 

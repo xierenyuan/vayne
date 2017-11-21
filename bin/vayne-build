@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 const ora = require('ora')
 const rm = require('rimraf')
-const path = require('path')
 const chalk = require('chalk')
 const webpack = require('webpack')
 

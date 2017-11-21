@@ -1,72 +1,20 @@
 #!/usr/bin/env node
-// require('shelljs/global')
-const webpack = require('webpack')
-const merge = require('webpack-merge')
-const WebpackDevServer = require('webpack-dev-server')
-const portfinder = require('portfinder')
-const chalk = require('chalk')
-const cwd = process.cwd()
-const config = require('../lib/utils/config')(process.env.NODE_ENV || 'development', cwd)
-const paths = require('../lib/utils/path')(cwd)
-require('../lib/config/server')
+const {join} = require('path')
+// const spawn = require('cross-spawn')
+const {fork} = require('child_process')
+
 if (!process.env.NODE_ENV) {
-  process.env.NODE_ENV = config.dev.env.NODE_ENV || 'development'
+  process.env.NODE_ENV = 'development'
 }
 
-// 别的参数
-const argv = require('yargs') // eslint-disable-line
-  .usage('Usage: vayne server [options]')
-  .option('P', {
-    alias: 'port',
-    describe: '服务端口号',
-    type: 'string'
-  })
-  .option('H', {
-    alias: 'host',
-    describe: 'host',
-    type: 'string'
-  })
-  .option('O', {
-    alias: 'openBrowser',
-    describe: '是否打开浏览器',
-    type: 'boolean',
-    default: false
-  })
-  .help('h')
-  .argv
-
-// default port where dev server listens for incoming traffic
-const PORT = argv.port || config.dev.port || 8000
-const HOST = argv.host || config.dev.host
-
-const webpackConfig = require('../lib/config/webpack.dev.conf')(argv, config, paths)
-console.log(JSON.stringify(webpackConfig))
-try {
-  let compiler = webpack(webpackConfig)
-  portfinder.basePort = PORT
-  portfinder.getPort((err, port) => {
-    if (err) {
-      throw new Error(err)
-    } else {
-      process.env.PORT = port
-      const devServerOptions = merge(webpackConfig.devServer, {
-        inline: true,
-        progress: true,
-        stats: {
-          colors: true
-        }
-      })
-      devServerOptions.port = port
-      console.log(JSON.stringify(devServerOptions))
-      let devServer = new WebpackDevServer(compiler, devServerOptions) // eslint-disable-line
-      devServer.listen(port, HOST, (err) => {
-        if (err) {
-          throw err
-        }
-        console.log(chalk.cyan('Starting the development server...'))
-      })
+function start () {
+  const p = fork(join(__dirname, '../lib/config/server.js'), process.argv.slice(2))
+  p.on('message', (data) => {
+    if (data === 'RESTART') {
+      p.kill('SIGINT')
+      start()
     }
   })
-} catch (e) {
-  console.log(e)
 }
+
+start()
