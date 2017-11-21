@@ -11,5 +11,4 @@ checkVersion(() => {
     .command('server', '启动开发（调试）模式')
     .command('build', '生产模式，生成最终的部署代码')
     .parse(process.argv)
-
 })
