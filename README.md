@@ -8,6 +8,7 @@
 
 ```shell
 npm i vayne -g
+yarn add vayne -D --registry=https://registry.npm.taobao.org
 ```
 
 ## 使用须知
@@ -23,7 +24,12 @@ SASS_BINARY_SITE=http://npm.taobao.org/mirrors/node-sass npm install node-sass -
 # 指定端口号
 vayne server --prot=2000
 ```
-
+## build
+``` shell
+vayne build
+# View the bundle analyzer report after build finishes
+vayne build -R
+```
 
 ## .vaynerc 配置
 
