@@ -41,3 +41,6 @@ vayne build -R
 
 ## template
 > 模板入口 默认是 src/index.tpl
+
+## plugins
+> 加载插件
