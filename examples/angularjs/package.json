@@ -1,0 +1,17 @@
+{
+  "name": "angularjs",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "xierenyuan@qq.com",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-vayne": "^1.0.2",
+    "eslint-config-vayne": "^0.0.3",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "vayne-plugin-angularjs": "^1.0.0"
+  }
+}

@@ -3,6 +3,8 @@
 <p align="center">
   薇恩 基于 vue-cli 的 webpack 通用封装,  更易简单的开始你的项目
 </p>
+[![npm (scoped)](https://img.shields.io/npm/v/vayne.svg)](https://www.npmjs.com/package/vayne)
+[![node](https://img.shields.io/node/v/vayne.svg)](https://nodejs.org/en/)
 
 ## 使用
 

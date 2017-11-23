@@ -19,7 +19,7 @@
     "eslint-config-vayne": "^0.0.3",
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6",
-    "vayne-plugin-vue": "^1.0.1",
+    "vayne-plugin-vue": "^1.0.3",
     "vue-template-compiler": "^2.5.8"
   },
   "engines": {
