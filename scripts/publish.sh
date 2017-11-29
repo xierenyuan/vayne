@@ -1,4 +1,4 @@
-# go to latest master
+go to latest master
 git config user.name 谢仁洪
 git config user.email xierenyuan@qq.com
 
@@ -30,20 +30,20 @@ then
   # commit 
   echo "LOG 当前目录: $PWD"
   # see https://docs.npmjs.com/cli/version
-  npm version --allow-same-version $VERSION -m "[release] $VERSION"
+  npm version --allow-same-version --force
 
-  #git status
+  git status
   git add -A
   git commit -m "[build] $VERSION"
 
-  # publish
+  #  publish
   git push origin master
 
-  # tag
+  #  tag
   git tag $TAG_NAME
   git push origin --tags
 
-  npm publish
 
+  npm publish
   echo "发布成功: npm version $VERSION git tag: $TAG_NAME "
 fi
