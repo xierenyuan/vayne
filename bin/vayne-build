@@ -1,4 +1,2 @@
 #!/usr/bin/env node
-require('../lib/check.version')(() => {
-  require('../lib/config/build')
-})
+require('../lib/config/build')
