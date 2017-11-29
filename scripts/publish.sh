@@ -30,9 +30,9 @@ then
   # commit 
   echo "LOG 当前目录: $PWD"
   # see https://docs.npmjs.com/cli/version
-  npm version --allow-same-version $VERSION --message "[release] $VERSION"
+  npm version --allow-same-version $VERSION -m "[release] $VERSION"
 
-  git status
+  #git status
   git add -A
   git commit -m "[build] $VERSION"
 
