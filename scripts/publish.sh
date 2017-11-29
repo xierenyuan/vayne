@@ -30,7 +30,7 @@ then
   # commit 
   echo "LOG 当前目录: $PWD"
   # see https://docs.npmjs.com/cli/version
-  npm version --allow-same-version --force
+  npm version --force --allow-same-version $VERSION
 
   git status
   git add -A
