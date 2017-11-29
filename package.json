@@ -10,7 +10,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint --ext .js lib bin"
+    "lint": "eslint --ext .js lib bin",
+    "pub": "npm run lint && npm publish"
   },
   "repository": {
     "type": "git",
