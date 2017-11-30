@@ -1,6 +1,6 @@
 {
   "name": "vayne",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "基于 vue-cli 的 webpack 通用封装, 更易简单的开始你的项目",
   "main": "index.js",
   "bin": {
@@ -76,5 +76,10 @@
   "engines": {
     "node": ">=6.2.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint-config-vayne": "^0.0.4",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-standard": "^3.0.1"
+  }
 }
