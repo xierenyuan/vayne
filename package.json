@@ -1,6 +1,6 @@
 {
   "name": "vayne",
-  "version": "0.0.15",
+  "version": "0.0.18",
   "description": "基于 vue-cli 的 webpack 通用封装, 更易简单的开始你的项目",
   "main": "index.js",
   "bin": {
@@ -10,7 +10,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint --ext .js lib bin",
+    "lint": "eslint --fix bin/* lib/*",
     "pub": "npm run lint && npm publish"
   },
   "repository": {
@@ -21,6 +21,11 @@
     "webpack",
     "vue-cli",
     "vayne"
+  ],
+  "files": [
+    "README.md",
+    "lib",
+    "bin"
   ],
   "author": "xierenyuan@qq.com",
   "license": "ISC",
@@ -37,7 +42,7 @@
     "commander": "^2.11.0",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.0",
-    "eslint": "^4.12.0",
+    "eslint": "^4.12.1",
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.7.1",
     "eventsource-polyfill": "^0.9.6",
@@ -69,9 +74,7 @@
     "webpack-merge": "^4.1.0"
   },
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=6.2.0"
   },
-  "devDependencies": {
-    "eslint-config-vayne": "^0.0.3"
-  }
+  "devDependencies": {}
 }
