@@ -1,6 +1,6 @@
 {
   "name": "vayne",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "基于 vue-cli 的 webpack 通用封装, 更易简单的开始你的项目",
   "main": "index.js",
   "bin": {
