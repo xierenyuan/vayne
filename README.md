@@ -14,6 +14,9 @@ npm i vayne -g
 yarn add vayne -D --registry=https://registry.npm.taobao.org
 ```
 
+## Like star (喜欢 请star 我😍）
+
+
 ## 使用须知
 > 因为node-sass 安装过慢 所以在当前项目移除依赖 需在使用项目根路径手动安装 见
 
