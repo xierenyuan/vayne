@@ -18,8 +18,16 @@ yarn add vayne -D --registry=https://registry.npm.taobao.org
 > 因为node-sass 安装过慢 所以在当前项目移除依赖 需在使用项目根路径手动安装 见
 
 ```shell
+# npm 安装
 SASS_BINARY_SITE=http://npm.taobao.org/mirrors/node-sass npm install node-sass -D
+
+# yarn 指向淘宝镜像
+yarn config set registry https://registry.npm.taobao.org -g
+
+# yarn node-sass 安装
+yarn config set sass_binary_site http://cdn.npm.taobao.org/dist/node-sass -g
 ```
+
 
 ## server
 
@@ -35,9 +43,7 @@ vayne build -R
 ```
 
 ## .vaynerc 配置
-
-## isNg 
-> 编译 angular.js 项目
+> 详见  __examples__  默认配置见 __lib/utils/vayne.config.js__ 等有时间了在维护文档.
 
 ## include
 >  需要编译的文件 同loader 的 include
