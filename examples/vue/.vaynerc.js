@@ -3,7 +3,7 @@ const path = require('path')
 
 module.exports = {
   entry: {
-    a8: './src/main.js'
+    app: './src/main.js'
   },
   template: 'index.html',
   plugins: [
