@@ -9,8 +9,10 @@
     "vayne-server": "bin/vayne-server"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint --fix bin/* lib/*",
+    "test": "yarn run lint && nyc ava",
+    "test:watch": "ava -wv",
+    "report": "nyc report --reporter=html",
+    "lint": "eslint --ext bin/* lib/*",
     "pub": "npm run lint && npm publish"
   },
   "repository": {
@@ -78,9 +80,16 @@
     "node": ">=6.2.0"
   },
   "devDependencies": {
+    "ava": "^0.24.0",
     "eslint-config-vayne": "^0.0.4",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-node": "^5.2.1",
-    "eslint-plugin-standard": "^3.0.1"
+    "eslint-plugin-standard": "^3.0.1",
+    "nyc": "^11.3.0"
+  },
+  "ava": {
+    "files": [
+      "test/**/*.spec.js"
+    ]
   }
 }

@@ -15,7 +15,10 @@
 ## Usage (使用)
 
 ```shell
+# npm
 npm i vayne -g
+# yarn
+yarn global add vayne
 yarn add vayne -D --registry=https://registry.npm.taobao.org
 ```
 ### server (本地开发)
