@@ -96,9 +96,9 @@
   dependencies:
     arrify "^1.0.1"
 
-"@vayne/postcss-px2rem@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@vayne/postcss-px2rem/-/postcss-px2rem-0.0.1.tgz#54373ee4fe15a0f657c011e579057f8153cff89a"
+"@vayne/postcss-px2rem@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@vayne/postcss-px2rem/-/postcss-px2rem-0.0.2.tgz#6efbad142f58c4d4780f714fc513f2d467b07e87"
   dependencies:
     css "^2.2.1"
     extend "^3.0.1"

@@ -1,6 +1,6 @@
 {
   "name": "vayne",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "description": "基于 vue-cli 的 webpack 通用封装, 更易简单的开始你的项目",
   "main": "index.js",
   "bin": {
@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/xierenyuan/vayne#readme",
   "dependencies": {
-    "@vayne/postcss-px2rem": "^0.0.1",
+    "@vayne/postcss-px2rem": "^0.0.2",
     "babel-core": "^6.22.1",
     "babel-loader": "^7.1.2",
     "chalk": "^2.0.1",
