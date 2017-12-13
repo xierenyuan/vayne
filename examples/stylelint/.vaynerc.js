@@ -8,6 +8,7 @@ module.exports = {
   template: 'index.html',
   plugins: [
     'vayne-plugin-vue',
-    'vayne-plugin-stylelint'
+    // 'vayne-plugin-stylelint'
+    require('./vayne.plugin.stylelint')
   ]
 }

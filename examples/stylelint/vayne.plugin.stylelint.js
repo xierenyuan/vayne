@@ -15,7 +15,7 @@ class VaynePluginStyleLint {
     return {
       plugins: [
         new StyleLintPlugin({
-          files: ['src/**/*.vue', 'src/**/*.scss']
+          files: ['scss/**/*.scss', 'src/**/*.vue', 'src/**/*.scss']
         })
       ]
     }
