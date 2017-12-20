@@ -1,9 +1,9 @@
 const path = require('path')
 const fs = require('fs')
 
-module.exports = function (cwd) {
+module.exports = function (cwd = process.cwd()) {
   const appDirectory = fs.realpathSync(cwd)
-  function resolveApp (relativePath) {
+  function resolveApp(relativePath) {
     return path.resolve(appDirectory, relativePath) // eslint-disable-line
   }
 

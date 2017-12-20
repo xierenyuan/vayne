@@ -4,7 +4,7 @@
  */
 const format = require('util').format
 const chalk = require('chalk')
-const version = require('../package.json').version
+const version = require('../../package.json').version
 
 /**
  * Prefix.
@@ -12,7 +12,7 @@ const version = require('../package.json').version
 const prefix = `VAYNE@${version}`
 const sep = chalk.gray('-')
 // 开启debug 模式 发布的时候设为false
-const isDebug = false
+const isDebug = process.env.IS_DEBUG || true
 
 exports.title = function(severity) {
   return chalk[bgColor(severity)].black('', prefix, '')
