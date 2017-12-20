@@ -14,7 +14,7 @@ test.before(async _t => {
 })
 
 test('port is 7788', t => {
-  // console.log(serverConfig)
+  // Console.log(serverConfig)
   t.is(serverConfig.devServer.port, 7788, '端口号不正确')
 })
 

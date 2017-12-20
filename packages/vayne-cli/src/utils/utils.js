@@ -69,12 +69,6 @@ module.exports = (config) => {
       const loaders = this.cssLoaders(options)
       for (const extension in loaders) {
         const loader = loaders[extension]
-        // if (extension === 'css') {
-        //   loader.push('postcss-loader')
-        // } else {
-        //   // postcss-loader 必须在 sass-loader 之前
-        //   loader.splice(process.env.NODE_ENV === 'production' ? 4 : 3, 0, 'postcss-loader')
-        // }
         output.push({
           test: new RegExp('\\.' + extension + '$'),
           use: loader
@@ -83,17 +77,27 @@ module.exports = (config) => {
       return output
     },
 
+    getProjectName() {
+      return new Promise((resolve) => {
+        try {
+          resolve(require(paths.appPackageJson).name)
+        } catch (error) {
+          resolve('vayne')
+        }
+      })
+    },
+
     createNotifierCallback: function () {
       const notifier = require('node-notifier')
 
-      return (severity, errors) => {
+      return async (severity, errors) => {
         if (severity !== 'error') {
           return
         }
         const error = errors[0]
         const filename = error.file && error.file.split('!').pop()
         notifier.notify({
-          title: require(paths.appPackageJson).name,
+          title: await this.getProjectName(),
           message: severity + ': ' + error.name,
           subtitle: filename || '',
           icon: path.join(__dirname, 'vn.png')

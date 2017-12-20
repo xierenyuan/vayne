@@ -54,7 +54,9 @@ class Base extends EventEmitter {
       name: name,
       open: options.open || false,
       config: options.config,
-      report: options.report || false
+      report: options.report || false,
+      host: options.host,
+      port: options.port
     }
   }
 }

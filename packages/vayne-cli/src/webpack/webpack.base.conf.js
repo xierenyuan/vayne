@@ -55,7 +55,7 @@ module.exports = config => {
     // 全局的三方包 loadWebpack.loaders
     externals: config.externals || {},
     module: {
-      rules: new Loader(config)
+      rules: new Loader(config).getRules()
     },
     node: {
       // prevent webpack from injecting useless setImmediate polyfill because Vue

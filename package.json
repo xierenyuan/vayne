@@ -5,7 +5,7 @@
     "test": "yarn run lint && nyc ava",
     "test:watch": "ava -wv",
     "report": "nyc report --reporter=html",
-    "lint": "xo",
+    "lint": "eslint --fix *.js",
     "pub": "npm run lint && npm publish"
   },
   "repository": {
@@ -33,9 +33,38 @@
     "nyc": "^11.3.0",
     "xo": "^0.18.2"
   },
+  "xo": {
+    "esnext": true,
+    "extends": "rem",
+    "ignores": [
+      "examples/**",
+      "template/**",
+      "packages/*/dist/**",
+      "packages/*/example/**",
+      "**/coverage/**",
+      "**/output*/**",
+      "**/fixture/**",
+      "**/example-*/**"
+    ],
+    "rules": {
+      "guard-for-in": 0,
+      "import/no-dynamic-require": 0,
+      "max-nested-callbacks": [
+        "error",
+        6
+      ],
+      "capitalized-comments": 0,
+      "no-multi-assign": 0,
+      "complexity": 0,
+      "ava/no-ignored-test-files": 0
+    }
+  },
   "ava": {
     "files": [
       "test/**/*.spec.js"
     ]
+  },
+  "dependencies": {
+    "eslint-config-rem": "^3.2.2"
   }
 }

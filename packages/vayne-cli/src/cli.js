@@ -61,8 +61,11 @@ if (!args[2] || !program.commands.some(c => c.name() === args[2])) {
 program.parse(args)
 
 async function bundle(cmd, command) {
-  const Vayne = require('../')
-
-  const vayne = new Vayne(cmd, command) // eslint-disable-line
-  vayne.dev()
+  if (command.name() === 'serve') {
+    require('./servers')(cmd, command)
+  } else if (command.name() === 'build') {
+    require('./build')(cmd, command)
+  } else {
+    program.help()
+  }
 }

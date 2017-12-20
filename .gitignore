@@ -14,3 +14,5 @@ packages/*/package-lock.json
 *.ntvs*
 *.njsproj
 *.sln
+
+package-lock.json
