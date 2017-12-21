@@ -1,0 +1,17 @@
+{
+  "name": "@vayne/vue",
+  "version": "1.0.0",
+  "description": "vayne vue 插件",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vayne",
+    "vayne-plugin",
+    "vue",
+    "vue-cli"
+  ],
+  "author": "阿平 <xierenyuan@qq.com>",
+  "license": "ISC"
+}

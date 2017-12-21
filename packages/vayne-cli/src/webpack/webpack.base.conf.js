@@ -1,24 +1,17 @@
-'use strict'
-const _ = require('lodash')
-const plugins = require('../plugin')
-const loaders = require('./loaders')
-
-module.exports = (args, config, paths, utils) => {
-  // loader 默认 include 处理 暴露在 config 上给 插件使用
-  const include = _.union([
-    paths.resolveApp('src'),
-    paths.resolveApp('test'),
-    paths.resolveApp('node_modules/@rrc')
+const {union, assign} = require('lodash')
+const path = require('../utils/path')()
+const Loader = require('./loaders')
+/**
+ * 通用webpack conf
+ * @param {*} options 传入的 vayne 配置参数
+ */
+module.exports = config => {
+  const include = union([
+    path.resolveApp('src'),
+    path.resolveApp('test'),
+    path.resolveApp('node_modules/@rrc')
   ], config.include || [])
   config.include = include
-  // 项目根路径 暴露给插件使用
-  config.appDirectory = paths.appDirectory
-  // 加载过来的webpack 插件
-  let loadWebpack = plugins(config, utils)
-
-  // 插件处理放在配置中方面 dev 和 生产环境同时调用
-  config.beforePlugins = loadWebpack.beforePlugins
-  config.afterPlugins = loadWebpack.afterPlugins
 
   const entry = config.entry || {
     app: './src/index.js'
@@ -33,39 +26,37 @@ module.exports = (args, config, paths, utils) => {
   // 扩展
   const extensions = config.extensions || []
   // 全局变量配置
-  const alias = _.assign({
+  const alias = assign({
     'vue$': 'vue/dist/vue.esm.js',
-    'assets': paths.resolveApp('src/assets'),
-    '@': paths.resolveApp('src'),
-    '*': paths.appDirectory
+    'assets': path.resolveApp('src/assets'),
+    '@': path.resolveApp('src'),
+    '*': path.appDirectory
   }, config.alias || {})
   return {
-    context: config.context || paths.appDirectory,
+    context: config.context || path.appDirectory,
     entry: entry,
     output: output,
     resolve: {
       extensions: ['.js', '.vue', '.json', ...extensions],
       alias: alias,
       modules: [
-        paths.appNodeModules,
+        path.appNodeModules,
         'node_modules',
-        paths.ownNodeModules
+        path.ownNodeModules
       ]
     },
     // loader 加载器 使用 vayne 本身的loader 和 应用程序的
     resolveLoader: {
       modules: [
-        paths.appNodeModules,
-        paths.ownNodeModules
+        path.appNodeModules,
+        path.ownNodeModules
       ]
     },
     // 全局的三方包 loadWebpack.loaders
     externals: config.externals || {},
     module: {
-      rules: _.union(loaders(config, paths, utils), loadWebpack.loaders)
+      rules: new Loader(config).getRules()
     },
-    // 默认的是放在第一位的 之后看是否有必要 扩展 afterPlugin beforePlugin 因为现在webpack 的是相对固定的
-    plugins: loadWebpack.plugins,
     node: {
       // prevent webpack from injecting useless setImmediate polyfill because Vue
       // source contains it (although only uses it if it's native).
