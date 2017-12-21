@@ -24,7 +24,6 @@ class Serve {
 
   // 重启时关闭 启动的服务
   kill() {
-    console.log('释放 dev server')
     this.server && this.server.close()
   }
 

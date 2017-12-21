@@ -46,7 +46,7 @@ class LoadConfig {
       .load(path)
       .then(result => {
         if (!result) {
-          log.fatal(`No Vayne Config found in ${path}`)
+          log.warn(`No Vayne Config found in ${path}`)
         }
         this.file = result ? result.filepath : ''
         return result ? result.config : {}
