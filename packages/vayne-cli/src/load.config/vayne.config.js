@@ -62,6 +62,8 @@ module.exports = {
     /**
      * Source Maps
      */
+    productionSourceMap: false,
+
     devtool: '#source-map',
     bundleAnalyzerReport: false
   }

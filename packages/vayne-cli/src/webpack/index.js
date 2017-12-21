@@ -20,7 +20,7 @@ class CreateWebpackConfig {
   }
 
   build() {
-    const buildConfig = require('./webpack.dev.conf')(this.options, this.utils)
+    const buildConfig = require('./webpack.prod.conf')(this.options, this.utils)
     return merge(this.baseWebpackConfig, buildConfig)
   }
 }

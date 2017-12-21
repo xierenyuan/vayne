@@ -7,7 +7,7 @@ module.exports = {
   },
   template: 'index.html',
   plugins: [
-    require('../../packages/vayne-plugin-vue')
+    // require('../../packages/vayne-plugin-vue')
   ],
   dev: {
     port: 9000

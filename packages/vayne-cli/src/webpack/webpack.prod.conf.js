@@ -1,3 +1,4 @@
+const {existsSync} = require('fs')
 const webpack = require('webpack')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -113,17 +114,23 @@ module.exports = (config, utils) => {
       ),
 
       // inline js
-      new HtmlWebpackInlineSourcePlugin(),
+      new HtmlWebpackInlineSourcePlugin()
 
-      // copy custom static assets
+    ]
+  }
+
+  // copy custom static assets 默认是只有存在static 目录的时候执行
+  const staticPath = paths.resolveApp('static')
+  if (existsSync(staticPath)) {
+    webpackConfig.plugins.push(
       new CopyWebpackPlugin([
         {
-          from: paths.resolveApp('static'),
+          from: staticPath,
           to: config.build.assetsSubDirectory,
           ignore: ['.*']
         }
       ])
-    ]
+    )
   }
 
   if (config.build.bundleAnalyzerReport || config.report) {
