@@ -33,7 +33,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-  $link: red;
+  $link: blue;
   h1, h2 {
     font-weight: normal;
   }

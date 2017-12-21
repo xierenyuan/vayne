@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     {{ count }}
+    vue demo
   </div>
 </template>
 
