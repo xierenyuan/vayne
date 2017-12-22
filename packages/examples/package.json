@@ -1,9 +1,9 @@
 {
+  "private": true,
   "name": "vayne-examples",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "vayne test",
   "author": "谢仁洪 <xierenhong@renrenche.com>",
-  "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.vue src",
     "build": "node build/build.js"
