@@ -107,7 +107,7 @@ class Loader {
     }
     // 加载postcss 配置
     if (usePostCSS) {
-      options.postcss = config.postcss
+      // options.postcss = config.postcss
     }
     return options
   }
