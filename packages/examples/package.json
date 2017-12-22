@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "vayne-examples",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "vayne test",
   "author": "谢仁洪 <xierenhong@renrenche.com>",
   "scripts": {
