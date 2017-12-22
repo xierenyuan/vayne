@@ -4,6 +4,6 @@ module.exports = {
   },
   template: 'index.html',
   vue: {
-    usePostCss: false
+    usePostCSS: false
   }
 }

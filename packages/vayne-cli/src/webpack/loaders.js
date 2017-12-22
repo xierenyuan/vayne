@@ -91,9 +91,13 @@ class Loader {
       cssLoader,
       {js: 'babel-loader'})
 
-    return {
+    let options = {
       loaders: loaders,
       cssSourceMap: sourceMapEnabled,
+      cssModules: {
+        localIdentName: '[name]__[local]___[hash:base64:5]',
+        camelCase: true
+      },
       transformToRequire: {
         video: 'src',
         source: 'src',
@@ -101,6 +105,11 @@ class Loader {
         image: 'xlink:href'
       }
     }
+    // 加载postcss 配置
+    if (usePostCSS) {
+      options.postcss = config.postcss
+    }
+    return options
   }
 
   useAssets() {

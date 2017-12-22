@@ -1,5 +1,6 @@
 const config = require('cosmiconfig')
 const merge = require('webpack-merge')
+const LoadTripartiteConfig = require('./load.tripartite.config')
 const log = require('../utils/log')
 const DEFAULT_CONFIG = require('./vayne.config')
 
@@ -17,6 +18,7 @@ class LoadConfig {
   constructor(options) {
     this.ctx = options
     this.file = ''
+    this.loadTripartiteConfig = new LoadTripartiteConfig(options)
   }
 
   /**
@@ -29,6 +31,17 @@ class LoadConfig {
     let {config, file} = await this.loadConfig()
     let nConfig = merge(DEFAULT_CONFIG, config)
     nConfig.cwdConfigFile = file
+    if (file) {
+      log.success(`> Using extenal vayne configuration location: ${file}`)
+    }
+    // postcss 不允许覆盖 如果默认发现是postcss 的配置 则给一个警告
+    if (nConfig.$postcss) {
+      log.warn(`$postcss 在vayne 中是保留关键词 变量不允许使用。你的这个配置是失效的。`)
+    }
+    nConfig.$postcss = await this.postcss()
+    if (nConfig.$postcss.file) {
+      log.success(`> Using extenal postcss configuration location: ${nConfig.$postcss.file}`)
+    }
     return nConfig
   }
 
@@ -63,6 +76,10 @@ class LoadConfig {
           file: this.file
         }
       })
+  }
+
+  postcss() {
+    return this.loadTripartiteConfig.loadPostcss()
   }
 }
 

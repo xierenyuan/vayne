@@ -47,15 +47,18 @@ program.on('--help', function() {
   console.log('')
 })
 
+let args = process.argv
+let input = args[2]
 // 默认没有输出提示信息 而是直接启动 vayne serve 所以给下提示
-if (!process.argv[2]) {
+if (!input) {
   // program.help()
   log.warn('没有参数. 默认启动 `vayne serve`')
+  args.splice(2, 0, 'serve')
 }
 
-let args = process.argv
-if (!args[2] || !program.commands.some(c => c.name() === args[2])) {
-  args.splice(2, 0, 'serve')
+// 如果输入的命令 没有 则给友好提示
+if (input && !program.commands.some(c => c.name() === input)) {
+  program.help()
 }
 
 program.parse(args)
