@@ -1,4 +1,4 @@
-<p align="center"><a href="https://github.com/xierenyuan/vayne/" target="_blank"><img src="./lib/config/vn.png"></a></p>
+<p align="center"><a href="https://github.com/xierenyuan/vayne/" target="_blank"><img src="./docs/vn.png"></a></p>
 <h3 align="center">vayne</h3>
 <p align="center">
   vayne 基于 vue-cli 的 webpack 全局安装的命令行工具, 全局安装依赖，可以省去每个项目安装开发依赖 的麻烦。同时以避免多个项目需同时维护多个webpack 配置的痛苦, 同时会同步vue-cli 的webpack 配置，当有新的配置时只需 升级vayne 即可享受。当然核心是无需在关心繁琐的webpack 配置。几分钟开始你的项目开发
