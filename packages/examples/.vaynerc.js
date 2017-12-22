@@ -7,9 +7,9 @@ module.exports = {
   },
   template: 'index.html',
   plugins: [
-    // require('../../packages/vayne-plugin-vue')
+    require('./vayne.stylelint')
   ],
-  dev: {
-    port: 9000
+  vue: {
+    usePostCSS: false
   }
 }
