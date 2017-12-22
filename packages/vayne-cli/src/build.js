@@ -7,7 +7,6 @@ const Vayne = require('../')
 module.exports = async (cmd, command) => {
   const vayne = new Vayne(cmd, command)
   let {webpackConfig, config} = await vayne.build()
-  console.log(webpackConfig.plugins)
   const spinner = ora('building for production...')
   spinner.start()
   rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {

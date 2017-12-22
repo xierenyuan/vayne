@@ -17,7 +17,7 @@ const defaultOptions = {
  */
 class VaynePluginQiniu {
   constructor({extendWebpack, options, log}) {
-    log.debug('开始解析 vayne qiniu 插件')
+    log.success('> Using vayne-plugin-qiniu 插件')
     let qiniu = options.qiniu || {}
     let opts = _.assign(defaultOptions, qiniu)
     opts.log = log
