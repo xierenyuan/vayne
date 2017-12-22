@@ -2,6 +2,7 @@
 const path = require('path')
 const paths = require('./path')()
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const is = require('./is')
 
 module.exports = (config) => {
   return {
@@ -21,11 +22,21 @@ module.exports = (config) => {
         }
       }
 
+      const postcssOptions = {
+        sourceMap: options.sourceMap
+      }
+
+      // 处理postcss 配置
+      const $postcss = config.$postcss || {}
+      if (is.isArray($postcss)) {
+        postcssOptions.plugins = $postcss
+      } else if (is.isObject($postcss)) {
+        Object.assign(postcssOptions, config.$postcss || {})
+      }
+
       let postcssLoader = {
         loader: 'postcss-loader',
-        options: {
-          sourceMap: options.sourceMap
-        }
+        options: postcssOptions
       }
 
       // generate loader string to be used with extract text plugin
