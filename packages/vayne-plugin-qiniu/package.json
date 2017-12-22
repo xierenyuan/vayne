@@ -1,0 +1,29 @@
+{
+  "name": "@vayne/qiniu",
+  "version": "1.0.0",
+  "description": "vayne 七牛云上传插件",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xierenyuan/vayne.git"
+  },
+  "keywords": [
+    "vayne",
+    "vayne-plugin",
+    "qiniu"
+  ],
+  "author": "阿平 <xierenyuan@qq.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xierenyuan/vayne/issues"
+  },
+  "homepage": "https://github.com/xierenyuan/vayne#readme",
+  "dependencies": {
+    "lodash.isregexp": "^4.0.1",
+    "ora": "^1.3.0",
+    "qiniu": "^7.1.1"
+  }
+}

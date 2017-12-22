@@ -26,13 +26,13 @@ module.exports = (config) => {
         sourceMap: options.sourceMap
       }
 
-      // 处理postcss 配置
-      const $postcss = config.$postcss || {}
-      if (is.isArray($postcss)) {
-        postcssOptions.plugins = $postcss
-      } else if (is.isObject($postcss)) {
-        Object.assign(postcssOptions, config.$postcss || {})
-      }
+      // 处理postcss 配置 会引起 Module build failed: ModuleBuildError: Module build failed: TypeError: Cannot read property 'postcss' of null 的错误
+      // const $postcss = config.$postcss || {}
+      // if (is.isArray($postcss)) {
+      //   postcssOptions.plugins = $postcss
+      // } else if (is.isObject($postcss)) {
+      //   Object.assign(postcssOptions, config.$postcss || {})
+      // }
 
       let postcssLoader = {
         loader: 'postcss-loader',

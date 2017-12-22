@@ -1,0 +1,28 @@
+{
+  "name": "@vayne/stylelint",
+  "version": "1.0.0",
+  "description": "vayne stylelint 插件 ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xierenyuan/vayne.git"
+  },
+  "keywords": [
+    "vayne",
+    "vayne-plugin",
+    "stylelint"
+  ],
+  "author": "阿平 <xierenyuan@qq.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xierenyuan/vayne/issues"
+  },
+  "homepage": "https://github.com/xierenyuan/vayne#readme",
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "stylelint-webpack-plugin": "^0.9.0"
+  }
+}

@@ -29,6 +29,8 @@ class Plugin extends Base {
       if (error.code === 'MODULE_NOT_FOUND' && error.message.indexOf(name) !== -1) {
         this.log.error(`Cannot find plugin ${name}. Did you forget to install it?\n npm install ${name} --save-dev \n or yarn add ${name} -D`)
         this.log.fatal('Loading plugin error')
+      } else {
+        this.log.fatal(`Loading ${name} plugin error: ` + error)
       }
     }
     return plugin
