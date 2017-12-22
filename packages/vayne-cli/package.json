@@ -8,7 +8,7 @@
     "build": "babel src -d lib"
   },
   "bin": {
-    "v": "bin/cli.js"
+    "vayne": "bin/cli.js"
   },
   "repository": {
     "type": "git",
