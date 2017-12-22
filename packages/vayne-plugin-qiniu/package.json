@@ -1,6 +1,6 @@
 {
   "name": "@vayne/qiniu",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "vayne 七牛云上传插件",
   "main": "index.js",
   "scripts": {

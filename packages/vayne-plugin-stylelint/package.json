@@ -1,6 +1,6 @@
 {
   "name": "@vayne/stylelint",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "vayne stylelint 插件 ",
   "main": "index.js",
   "scripts": {
