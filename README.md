@@ -8,6 +8,7 @@
 [![node](https://img.shields.io/node/v/vayne.svg)](https://nodejs.org/en/)
 [![GitHub tag](https://img.shields.io/github/tag/xierenyuan/vayne.svg)](https://github.com/xierenyuan/vayne)
 [![npm](https://img.shields.io/npm/l/@vayne/cli.svg)](https://www.npmjs.com/package/@vayne/cli)
+[![Build Status](https://travis-ci.org/xierenyuan/vayne.svg?branch=develop)](https://travis-ci.org/xierenyuan/vayne)
 
 ## 演示
 <p align="center">
