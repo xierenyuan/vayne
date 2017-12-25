@@ -1,4 +1,12 @@
+sudo: required
 language: node_js
 node_js: stable
+cache: yarn
+before_install:
+    # 安装yarn
+    - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version version-number
+    - export PATH="$HOME/.yarn/bin:$PATH"
+script: 
+    - make test
 after_success:
     - './node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls'
