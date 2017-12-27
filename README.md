@@ -148,3 +148,13 @@ yarn config set registry https://registry.npm.taobao.org -g
 # yarn node-sass 安装
 yarn config set sass_binary_site http://cdn.npm.taobao.org/dist/node-sass -g
 ```
+
+## link
+> 感谢这些优秀的开源项目
+
+- [roadhog](https://github.com/sorrycc/roadhog)
+- [Vue](https://github.com/vuejs/vue)
+- [Vue-cli](https://github.com/vuejs/vue-cli)
+- [Webpack](https://github.com/webpack/webpack)
+- [POI](https://github.com/egoist/poi)
+- [parcel](https://github.com/parcel-bundler/parcel)
