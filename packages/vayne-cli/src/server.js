@@ -5,7 +5,9 @@ const net = require('net')
 const open = require('opn')
 const addDevServerEntrypoints = require('webpack-dev-server/lib/util/addDevServerEntrypoints')
 const createDomain = require('webpack-dev-server/lib/util/createDomain')
+const MockServer = require('./mock/mock')
 const log = require('./utils/log')
+
 
 /**
  *
@@ -59,6 +61,7 @@ class Serve {
   createServer() {
     try {
       this.server = new WebpackDevServer(this.compiler, this.options)
+      new MockServer(this.server)
     } catch (e) {
       const OptionsValidationError = require('webpack-dev-server/lib/OptionsValidationError')
       if (e instanceof OptionsValidationError) {
