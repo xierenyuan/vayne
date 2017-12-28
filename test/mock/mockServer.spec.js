@@ -54,8 +54,17 @@ test('outputError', t => {
 })
 
 test('applyMock outputError', t => {
-  t.throws(() => {
-    MockServer.prototype.applyMock(undefined),
-    [{ message: 'Path must be a string. Received undefined' }, '']
-  })
+  const error = t.throws(() => {
+    MockServer.prototype.applyMock(undefined)
+  }, TypeError)
+
+  t.is(error.message, 'Path must be a string. Received undefined')
+})
+
+test('realApplyMock outputError', t => {
+  const error = t.throws(() => {
+    MockServer.prototype.realApplyMock(undefined)
+  }, TypeError)
+
+  t.is(error.message, 'Path must be a string. Received undefined')
 })
