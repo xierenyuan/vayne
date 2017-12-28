@@ -58,7 +58,7 @@ test('applyMock outputError', t => {
     MockServer.prototype.applyMock(undefined)
   }, TypeError)
 
-  t.is(error.message, 'Path must be a string. Received undefined')
+  t.is(error.message, 'The "path" argument must be of type string')
 })
 
 test('realApplyMock outputError', t => {
@@ -66,5 +66,5 @@ test('realApplyMock outputError', t => {
     MockServer.prototype.realApplyMock(undefined)
   }, TypeError)
 
-  t.is(error.message, 'Path must be a string. Received undefined')
+  t.is(error.message, 'The "path" argument must be of type string')
 })
