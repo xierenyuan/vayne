@@ -48,3 +48,14 @@ test('template', t => {
 test('parseKey', t => {
   t.deepEqual(MockServer.prototype.parseKey('get /xxx'), { method: 'get', path: '/xxx' }, '解析请求方式和url')
 })
+
+test('outputError', t => {
+  t.deepEqual(MockServer.prototype.outputError(), undefined, '没有error')
+})
+
+test('applyMock outputError', t => {
+  t.throws(() => {
+    MockServer.prototype.applyMock(undefined),
+    [{ message: 'Path must be a string. Received undefined' }, '']
+  })
+})
