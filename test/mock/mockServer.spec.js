@@ -12,14 +12,12 @@ test('getConfig vayne.mock.js exist', t => {
     MockServer.prototype.getConfig(`${pwd}/.vayne.mock.js`),
     {
       config: {
-        one: {
-          'get /xxx': {
-            'object|2': {
-              '310000': '上海市',
-              '320000': '江苏省',
-              '330000': '浙江省',
-              '340000': '安徽省'
-            }
+        'get /xxx': {
+          'object|2': {
+            '310000': '上海市',
+            '320000': '江苏省',
+            '330000': '浙江省',
+            '340000': '安徽省'
           }
         }
       },
