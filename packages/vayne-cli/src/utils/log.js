@@ -13,7 +13,6 @@ const prefix = `VAYNE@${version}`
 const sep = chalk.gray('-')
 // 开启debug 模式 发布的时候设为false
 const isDebug = process.env.IS_DEBUG || false
-exports.isDebug = isDebug
 
 exports.title = function(severity) {
   return chalk[bgColor(severity)].black('', prefix, '')
