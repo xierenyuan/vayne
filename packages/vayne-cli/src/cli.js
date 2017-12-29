@@ -57,7 +57,7 @@ if (!input) {
 }
 
 // 如果输入的命令 没有 则给友好提示
-if (input && !program.commands.some(c => c.name() === input)) {
+if (input && !program.commands.some(c => c.name() === input) && input.indexOf('-') === -1) {
   program.help()
 }
 

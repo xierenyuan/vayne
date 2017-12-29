@@ -18,3 +18,7 @@ packages/*/dist
 *.sln
 
 package-lock.json
+
+# 单侧覆盖率
+coverage
+.nyc_output
