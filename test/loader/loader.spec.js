@@ -6,7 +6,7 @@ let loaders = null
 
 test.before(_t => {
   loaders = new Loaders(Object.assign(defaultConfig, {
-    // urlLoaderLimit: ,
+    urlLoaderLimit: 8000,
     include: [
       'xxxxx/sss/ss'
     ]
@@ -17,8 +17,8 @@ test("include is ['xxxxx/sss/ss']", t => {
   t.deepEqual(loaders.include, ['xxxxx/sss/ss'], 'include 返回不正确')
 })
 
-test('urlLoaderLimit is 10000', t => {
-  t.is(loaders.limit, 10000, 'limit 不正确')
+test('urlLoaderLimit is 8000', t => {
+  t.is(loaders.limit, 8000, 'limit 不正确')
 })
 
 test('emitWarning is true', t => {
