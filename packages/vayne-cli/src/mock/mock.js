@@ -21,8 +21,8 @@ class MockServer {
     const resolvedFilePath = paths.resolveApp(filePath)
     if (fs.existsSync(resolvedFilePath)) {
       const files = []
-      const realRequire = require.extensions['.js']
-      require.extensions['.js'] = (m, filename) => {
+      const realRequire = require.extensions['.js'] // eslint-disable-line
+      require.extensions['.js'] = (m, filename) => { // eslint-disable-line
         if (filename.indexOf(paths.appNodeModules) === -1) {
           files.push(filename)
         }
@@ -30,12 +30,12 @@ class MockServer {
         return realRequire(m, filename)
       }
       const config = require(resolvedFilePath)  // eslint-disable-line
-      require.extensions['.js'] = realRequire
-      log.success('获取 vayne.mock 配置')
+      require.extensions['.js'] = realRequire // eslint-disable-line
+      log.success('> Using vayne mock configuration')
 
       return { config, files }
     } else {
-      log.warn('你还没有完整的 vayne.mock 配置')
+      log.warn('> 还没有 vayne mock 配置, mock 功能占无法使用')
       return {
         config: {},
         files: [resolvedFilePath]
@@ -60,13 +60,13 @@ class MockServer {
   }
 
   applyMock(devServer) {
-    const realRequire = require.extensions['.js']
+    const realRequire = require.extensions['.js'] // eslint-disable-line
     try {
       this.realApplyMock(devServer)
       this.error = null
     } catch (e) {
       // 避免 require mock 文件出错时 100% cpu
-      require.extensions['.js'] = realRequire
+      require.extensions['.js'] = realRequire // eslint-disable-line
 
       this.error = e
       this.outputError()
