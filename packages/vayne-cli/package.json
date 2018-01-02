@@ -1,6 +1,6 @@
 {
   "name": "@vayne/cli",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "基于 vue-cli 的 webpack 通用封装, 二分钟开始你的项目",
   "main": "index.js",
   "scripts": {
