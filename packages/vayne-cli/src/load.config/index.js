@@ -38,10 +38,11 @@ class LoadConfig {
     if (nConfig.$postcss) {
       log.warn(`$postcss 在vayne 中是保留关键词 变量不允许使用。你的这个配置是失效的。`)
     }
-    nConfig.$postcss = await this.postcss()
-    if (nConfig.$postcss.file) {
-      log.success(`> Using extenal postcss configuration location: ${nConfig.$postcss.file}`)
-    }
+    // TODO 因为vue-loader 默认以加载了 postcss-load-config 插件 所以 此功能占时禁用
+    // nConfig.$postcss = await this.postcss()
+    // if (nConfig.$postcss.file) {
+    //   log.success(`> Using extenal postcss configuration location: ${nConfig.$postcss.file}`)
+    // }
     return nConfig
   }
 
