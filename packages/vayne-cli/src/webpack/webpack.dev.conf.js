@@ -25,7 +25,9 @@ module.exports = (config, utils) => {
       watchOptions: {
         ignored: /node_modules/,
         poll: config.dev.poll
-      }
+      },
+      // fix 如果自定义了域名 提示 无效的 host header https://github.com/webpack/webpack-dev-server/issues/882
+      disableHostCheck: true
     },
     plugins: [
       new webpack.DefinePlugin({
