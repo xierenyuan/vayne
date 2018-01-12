@@ -35,7 +35,7 @@ class MockServer {
 
       return { config, files }
     } else {
-      log.warn('> 还没有 vayne mock 配置, mock 功能占无法使用')
+      log.warn('> 还没有 vayne mock 配置, mock 功能暂时无法使用')
       return {
         config: {},
         files: [resolvedFilePath]
